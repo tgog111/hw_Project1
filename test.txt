@@ -1,0 +1,2 @@
+3|super|관리자
+1| apple|apple
