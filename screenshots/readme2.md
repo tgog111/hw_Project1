@@ -12,9 +12,9 @@ https://github.com/tgog111/hw_Project1/tree/master/screenshots
 
 <img src = "https://github.com/tgog111/hw_Project1/blob/master/screenshots/4%EB%B2%88.png?raw=true" width="40%"> <br>
 
-<img src = "https://github.com/tgog111/hw_Project1/blob/master/screenshots/5%EB%B2%88.png?raw=true" width="40%"> <br>
-
 <img src = "https://github.com/tgog111/hw_Project1/blob/master/screenshots/6%EB%B2%88.png?raw=true" width="40%"> <br>
+
+<img src = "https://github.com/tgog111/hw_Project1/blob/master/screenshots/5%EB%B2%88.png?raw=true" width="40%"> <br>
 
 <img src = "https://github.com/tgog111/hw_Project1/blob/master/screenshots/7%EB%B2%88.png?raw=true" width="40%"> <br>
 
