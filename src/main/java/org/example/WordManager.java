@@ -3,6 +3,7 @@ package org.example;
 import java.util.Scanner;
 
 public class WordManager {
+
     Scanner s = new Scanner(System.in);
     WordCRUD wordCRUD;
 
@@ -29,6 +30,8 @@ public class WordManager {
     public void start(){
 
         wordCRUD.loadFile();
+        System.out.println("*** 영단어 마스터 ***\n");
+
         while(true){
             int menu = selectMenu();
             if(menu==0) {

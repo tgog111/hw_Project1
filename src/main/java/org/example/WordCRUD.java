@@ -41,6 +41,7 @@ public class WordCRUD implements ICRUD{
         return 0;
     }
 
+
     @Override
     public int delete(Object obj) {
         return 0;
@@ -52,7 +53,7 @@ public class WordCRUD implements ICRUD{
     }
 
     public void listAll(){
-        System.out.println("\n--------------------------------");
+        System.out.println("--------------------------------");
         for(int i=0 ; i<list.size() ; i++){
             System.out.print((i+1)+ " ");
             System.out.println(list.get(i).toString());
@@ -63,7 +64,7 @@ public class WordCRUD implements ICRUD{
     public ArrayList<Integer> listAll(String keyword){
         ArrayList<Integer> idlist = new ArrayList<>();
         int j=0;
-        System.out.println("\n--------------------------------");
+        System.out.println("--------------------------------");
         for(int i=0 ; i<list.size() ; i++){
             String word = list.get(i).getWord();
             if(!word.contains(keyword)) continue;
@@ -72,13 +73,13 @@ public class WordCRUD implements ICRUD{
             idlist.add(i);
             j++;
         }
-        System.out.println("--------------------------------\n");
+        System.out.println("--------------------------------");
         return idlist;
     }
 
     public void listAll(int level) {
         int j=0;
-        System.out.println("\n--------------------------------");
+        System.out.println("--------------------------------");
         for(int i=0 ; i<list.size() ; i++){
             int ilevel = list.get(i).getLevel();
             if(ilevel != level) continue;
@@ -90,7 +91,7 @@ public class WordCRUD implements ICRUD{
     }
 
     public void updateItem() {
-        System.out.print("=> 수정할 단어 검색: ");
+        System.out.print("\n=>수정할 단어 검색: ");
         String keyword = s.next();
         ArrayList<Integer> idlist = this.listAll(keyword);
         System.out.print("=> 수정할 번호 선택: ");
@@ -103,23 +104,23 @@ public class WordCRUD implements ICRUD{
 
         word.setMeaning(meaning);
 
-        System.out.println("단어가 수정되었습니다. \n");
+        System.out.println("\n단어 수정이 성공적으로 되었습니다!! \n");
     }
 
     public void deleteItem() {
-        System.out.print("=> 삭제할 단어 검색: ");
+        System.out.print("\n=>삭제할 단어 검색: ");
         String keyword = s.next();
         ArrayList<Integer> idlist = this.listAll(keyword);
-        System.out.print("=> 삭제할 번호 선택: ");
+        System.out.print("=>삭제할 번호 선택: ");
         int id = s.nextInt();
         s.nextLine();
 
-        System.out.print("=> 정말로 삭제하실래요?(Y/n): ");
+        System.out.print("=>정말로 삭제하실래요?(Y/n): ");
         String ans = s.next();
 
         if(ans.equalsIgnoreCase("y")){
             list.remove((int)idlist.get(id-1));
-            System.out.println("단어가 삭제되었습니다. \n");
+            System.out.println("\n선택한 단어 삭제 완료!!!. \n");
         }
         else System.out.println("취소되었습니다. \n");
     }
@@ -142,7 +143,7 @@ public class WordCRUD implements ICRUD{
                 count++;
             }
             br.close();
-            System.out.println("==> " + count + "개 로딩 완료!!!");
+            System.out.println("=>" + count + "개 단어 로딩 완료!\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -155,7 +156,7 @@ public class WordCRUD implements ICRUD{
                 pr.write(one.toFileString()+"\n");
             }
             pr.close();
-            System.out.println("==> 데이터 저장 완료!!!");
+            System.out.println("\n모든 단어 파일 저장 완료!!!\n");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -163,14 +164,14 @@ public class WordCRUD implements ICRUD{
     }
 
     public void searchLevel() {
-        System.out.print("==> 원하는 레벨은? (1~3) ");
+        System.out.print("\n=>레벨(1:초급,2중:중급,3:고급)선택:");
         int level = s.nextInt();
         listAll(level);
 
     }
 
     public void searchWord() {
-        System.out.print("==> 원하는 단어는? ");
+        System.out.print("\n=>검색할 단어 입력:");
         String keyword = s.next();
         listAll(keyword);
     }
